@@ -10,7 +10,7 @@ Dalam mengerjakan soal-soal ini saya menggunakan bahasa pemrograman Javascript y
 ### `node 3.js`
 
 ## Soal nomer 4
-Untuk Soal nomer 4 bagian A dikerjakan dengan Workbench MySQL. semua query tersedia pada file `4A.sql` dan disertakan pula screenshoot output dari tiap query. Untuk mereplikasi database yang telah dibuat dapat menggunakan file `mobileganggu.sql`
+Untuk Soal nomer 4 bagian A dikerjakan dengan Workbench MySQL. Untuk data image hero saya mengupload semua gambar pada [Cloudinary](https://cloudinary.com/). Semua query tersedia pada file [4A.sql](https://github.com/UlyaHr/DumbwaysB20K6/blob/master/4A.sql) dan disertakan pula screenshoot output dari tiap query. Untuk mereplikasi database yang telah dibuat dapat menggunakan file [mobileganggu.sql](https://github.com/UlyaHr/DumbwaysB20K6/blob/master/mobileganggu.sql)
 
 ## Progress Pengerjaan
 
@@ -20,4 +20,4 @@ Untuk Soal nomer 4 bagian A dikerjakan dengan Workbench MySQL. semua query terse
 
 ✅ Soal no.3 [Completed]
 
-[] Soal no.4 [On Progress]
+[x] Soal no.4 [Baru bagian A]
