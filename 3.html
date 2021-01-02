@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solusi #3</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      table {
+        table-layout: fixed;
+      }
+      table,
+      th,
+      tr {
+        border: 1px solid #555555;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        width: 50px;
+        text-align: center;
+      }
+      tr {
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table class="table"></table>
+    </div>
+  </body>
+  <script>
+    const gambarPola = (num) => {
+      const array = [];
+      let char = ["D", "U", "M", "B", "W", "A", "Y", "S"];
+      let n = num;
+
+      const table = document.querySelector("table");
+      console.log(table);
+
+      for (let i = 0; i <= num; i++) {
+        table.innerHTML += `<tr class="baris-${i}"></tr>`;
+        array[i] = [];
+
+        for (let j = 0; j <= num; j++) {
+          document.querySelector(
+            `.baris-${i}`
+          ).innerHTML += `<th class="kolom-${i}${j}"></th>`;
+          if (j === i) {
+            array[i][j] = char[j];
+            document.querySelector(`.kolom-${i}${j}`).innerText += char[j];
+          }
+          if (j === n) {
+            array[i][j] = char[j];
+            document.querySelector(`.kolom-${i}${j}`).innerText += char[j];
+          }
+        }
+        n--;
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      gambarPola(7);
+    });
+  </script>
+</html>

@@ -1,4 +1,6 @@
 test.js
-3.html
 4.sql
 hero.txt
+
+client/node_modules/
+server/node_modules/
