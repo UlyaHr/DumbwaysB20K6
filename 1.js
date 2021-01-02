@@ -121,101 +121,124 @@ const hitungUangKembalian = (uang, harga) => {
   };
 
   const angkaTerbilang = (target) => {
-    const units = ['', 'ribu', 'juta', 'milyar',]
-    const maxIndex = units.length - 1
-  
+    const units = ["", "ribu", "juta", "milyar"];
+    const maxIndex = units.length - 1;
+
     const digitToUnit = (digit) => {
-      const curIndex = digit / 3
-      return curIndex <= maxIndex ? units[curIndex] : units[maxIndex]
-    }
-  
-    const numbers = ['', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan']
+      const curIndex = digit / 3;
+      return curIndex <= maxIndex ? units[curIndex] : units[maxIndex];
+    };
+
+    const numbers = [
+      "",
+      "satu",
+      "dua",
+      "tiga",
+      "empat",
+      "lima",
+      "enam",
+      "tujuh",
+      "delapan",
+      "sembilan",
+    ];
     const numberToText = (index) => {
-      return numbers[index] || ''
-    }
-  
+      return numbers[index] || "";
+    };
+
     const terbilang = (angka) => {
-      const angkaLength   = angka.length
-      const angkaMaxIndex = angkaLength - 1
-  
+      const angkaLength = angka.length;
+      const angkaMaxIndex = angkaLength - 1;
+
       // Angka Nol
       if (angkaMaxIndex === 0 && Number(angka[0]) === 0) {
-        return 'nol'
+        return "nol";
       }
-  
-      let space = ''
-      let result = ''
-  
-      let i = 0
+
+      let space = "";
+      let result = "";
+
+      let i = 0;
       while (i !== angkaLength) {
-  
-        const digitCount = angkaMaxIndex - i
-        const modGroup = digitCount % 3 // [2,1,0]
-        const curAngka = Number(angka[i])
-  
-        if (digitCount === 3 && curAngka === 1 && (i === 0 || 
-          (Number(angka[i - 2]) === 0 && Number(angka[i - 1]) === 0))) {
+        const digitCount = angkaMaxIndex - i;
+        const modGroup = digitCount % 3; // [2,1,0]
+        const curAngka = Number(angka[i]);
+
+        if (
+          digitCount === 3 &&
+          curAngka === 1 &&
+          (i === 0 ||
+            (Number(angka[i - 2]) === 0 && Number(angka[i - 1]) === 0))
+        ) {
           /* Angka Seribu */
-          result += `${space}seribu`
+          result += `${space}seribu`;
         } else {
           if (curAngka !== 0) {
             if (modGroup === 0) {
               /* Angka Satuan Bukan Nol */
-              result += `${space}${numberToText(curAngka)}${(i === angkaMaxIndex ? '' : ' ')}${digitToUnit(digitCount)}`
+              result += `${space}${numberToText(curAngka)}${
+                i === angkaMaxIndex ? "" : " "
+              }${digitToUnit(digitCount)}`;
             } else if (modGroup === 2) {
               /* Angka Ratusan */
               if (curAngka === 1) {
-                result += `${space}seratus`
+                result += `${space}seratus`;
               } else {
-                result += `${space}${numberToText(curAngka)} ratus`
+                result += `${space}${numberToText(curAngka)} ratus`;
               }
             } else {
               /* Angka Sepuluh dan Belasan */
               if (curAngka === 1) {
-                i++ // Skip Next Angka
-                const nextAngka = Number(angka[i])
+                i++; // Skip Next Angka
+                const nextAngka = Number(angka[i]);
                 if (nextAngka === 0) {
-                  result += `${space}sepuluh`
+                  result += `${space}sepuluh`;
                   /* Proses Next Angka Sekarang */
-                  if (digitCount !== 1 && (Number(angka[i - 2]) !== 0 || Number(angka[i - 1]) !== 0)) {
-                    result += ` ${digitToUnit(digitCount - 1)}`
+                  if (
+                    digitCount !== 1 &&
+                    (Number(angka[i - 2]) !== 0 || Number(angka[i - 1]) !== 0)
+                  ) {
+                    result += ` ${digitToUnit(digitCount - 1)}`;
                   }
                 } else {
                   if (nextAngka === 1) {
-                    result += `${space}sebelas`
+                    result += `${space}sebelas`;
                   } else {
-                    result += `${space}${numberToText(nextAngka)} belas`
+                    result += `${space}${numberToText(nextAngka)} belas`;
                   }
                   /* Proses Next Angka Sekarang */
                   if (digitCount !== 1) {
-                    result += ` ${digitToUnit(digitCount - 1)}`
+                    result += ` ${digitToUnit(digitCount - 1)}`;
                   }
                 }
               } else {
                 /* Angka Puluhan */
-                result += `${space}${numberToText(curAngka)} puluh`
+                result += `${space}${numberToText(curAngka)} puluh`;
               }
             }
           } else {
             /* Angka Satuan Nol */
-            if (modGroup === 0 && (Number(angka[i - 2]) !== 0 || Number(angka[i - 1]) !== 0) && digitCount !== 0) {
-              result += ` ${digitToUnit(digitCount)}`
+            if (
+              modGroup === 0 &&
+              (Number(angka[i - 2]) !== 0 || Number(angka[i - 1]) !== 0) &&
+              digitCount !== 0
+            ) {
+              result += ` ${digitToUnit(digitCount)}`;
             }
           }
         }
-  
+
         if (i <= 1) {
-          space = ' '
+          space = " ";
         }
-        i++
+        i++;
       }
-  
-      return result
-    }
-  
-    if (typeof target !== "string") target = String(target)
-    return terbilang(target)
-  }
+
+      return result;
+    };
+
+    if (typeof target !== "string") target = String(target);
+    return terbilang(target);
+  };
 
   console.log(`Uang dibayar: Rp ${uang.toLocaleString("id-ID")}`);
   console.log(`Total Bayar : Rp ${harga.toLocaleString("id-ID")}`);
