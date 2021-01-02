@@ -23,4 +23,4 @@ Untuk Web App CRUD saya mencoba-coba membuat menggunakan Node.JS Express.JS dan 
 
 ✅ Soal no.3 [Completed]
 
-[X] Soal no.4 [Baru bagian A]
+:x: Soal no.4 [Baru bagian A]
