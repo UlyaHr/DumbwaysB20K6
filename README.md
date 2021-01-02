@@ -13,7 +13,11 @@ Dalam mengerjakan soal-soal ini saya menggunakan bahasa pemrograman Javascript y
 Untuk Soal nomer 4 Bagian A, semua query tersedia pada file `4A.sql` dan disertakan pula screenshoot output dari tiap query. Untuk mereplikasi database yang telah dibuat dapat menggunakan file `mobileganggu.sql`
 
 ## Progress Pengerjaan
+
 ✅ Soal no.1 [Completed]
+
 ✅ Soal no.2 [Completed]
+
 ✅ Soal no.3 [Completed]
+
 [] Soal no.4 [On Progress]
