@@ -3,9 +3,13 @@
 ## Soal nomer 1 - 2
 Dalam mengerjakan soal-soal ini saya menggunakan bahasa pemrograman Javascript yang ditulis dengan bantuan Visual Studio Code dan di jalankan menggunakan Node.js. Untuk menjalankan dapat dilakukan dengan mengetik command berikut pada terminal:
 
-### `node 1.js`
+```sh
+node 1.js
+```
 
-### `node 2.js`
+```sh
+node 2.js
+```
 
 ## Soal nomer 3
 Soal nomer 3 dikerjakan menggunakan kombinasi Javascript, HTML, dan CSS. Untuk melihat hasil cukup dengan membuka file `3.html` pada browser.
