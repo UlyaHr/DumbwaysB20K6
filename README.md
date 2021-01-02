@@ -1,7 +1,7 @@
 # Solusi Test Technical Online Bootcamp DumbWays Batch 20 Kloter 6
 
 ## Soal nomer 1 - 3
-Dalam mengerjakan soal-soal ini saya menggunakan bahasa pemrograman Javascript yang ditulis dengan bantuan Visual Studio Code dan di jalankan menggunakan Node.js
+Dalam mengerjakan soal-soal ini saya menggunakan bahasa pemrograman Javascript yang ditulis dengan bantuan Visual Studio Code dan di jalankan menggunakan Node.js. Untuk menjalankan dapat dilakukan dengan mengetik command berikut pada terminal:
 
 ### `node 1.js`
 
